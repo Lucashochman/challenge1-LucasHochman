@@ -1,0 +1,21 @@
+﻿# Android/IntelliJ
+*.iml
+.gradle/
+local.properties
+/.idea/
+/build/
+/*/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+
+# Kotlin/Jetpack Compose
+**/out/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keystore (no subir llaves)
+**/*.keystore
+**/*.jks
