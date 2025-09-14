@@ -4,30 +4,45 @@ import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.googlefonts.GoogleFont
+import androidx.compose.ui.text.googlefonts.Font
 import androidx.compose.ui.unit.sp
+import com.example.myapplication.R
+
+
+private val provider = GoogleFont.Provider(
+    providerAuthority = "com.google.android.gms.fonts",
+    providerPackage = "com.google.android.gms",
+    certificates = R.array.com_google_android_gms_fonts_certs
+)
+
+private val poppins = GoogleFont("Poppins")
+
+
+val PoppinsFamily = FontFamily(
+    Font(googleFont = poppins, fontProvider = provider, weight = FontWeight.Normal),
+    Font(googleFont = poppins, fontProvider = provider, weight = FontWeight.Medium),
+    Font(googleFont = poppins, fontProvider = provider, weight = FontWeight.SemiBold),
+    Font(googleFont = poppins, fontProvider = provider, weight = FontWeight.Bold),
+)
 
 val Typography = Typography(
-    headlineMedium = TextStyle(   // “Discover your…” / “Login here”
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.ExtraBold,
-        fontSize = 26.sp,
-        lineHeight = 32.sp
-    ),
-    headlineSmall = TextStyle(
-        fontFamily = FontFamily.Default,
-        fontWeight = FontWeight.ExtraBold,
-        fontSize = 22.sp
-    ),
-    bodyMedium = TextStyle(
-        fontFamily = FontFamily.Default,
+    bodyLarge = TextStyle(
+        fontFamily = PoppinsFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 14.sp,
-        lineHeight = 20.sp,
-        color = TextSecondary
+        fontSize = 16.sp,
+        lineHeight = 22.sp
     ),
-    labelLarge = TextStyle(       // texto de botones “Sign in”
-        fontFamily = FontFamily.Default,
+    headlineMedium = TextStyle(
+        fontFamily = PoppinsFamily,
         fontWeight = FontWeight.SemiBold,
-        letterSpacing = 1.5.sp
+        fontSize = 22.sp,
+        lineHeight = 28.sp
+    ),
+    labelLarge = TextStyle(
+        fontFamily = PoppinsFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 14.sp
     )
 )
+
